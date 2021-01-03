@@ -171,6 +171,92 @@ small, b {
   cursor: pointer;
 }
 
+/* Contact Form */
+.contact-form {
+  margin: 3.2rem auto;
+  padding: 1.6rem;
+  max-width: 800px;
+}
+
+.contact-form > * {
+  padding: .8rem;
+  margin: 1.6rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1.3rem;
+  font-family: var(--font);
+}
+
+.contact-form input {
+  border: 0;
+  border-bottom: thin solid var(--gray-dark-color);
+  padding-left: 0;
+}
+
+.contact-form textarea {
+  border: thin solid var(--gray-dark-color);
+  resize: none;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 0;
+  cursor: pointer;
+  transition: all .5s ease-out;
+}
+
+.contact-form input[type="submit"]:hover {
+  opacity: .75;
+}
+
+.contact-form *::placeholder {
+  color: var(--gray-dark-color);
+}
+
+.modal#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.6rem;
+  }
+
+  .contact-form textarea,
+  .contact-form-loader {
+    grid-column: span 2;
+  }
+
+  .contact-form input[type="submit"] {
+    margin-left: 0;
+  }
+}
+
+.contact-form-response {
+  padding: 1.6rem;
+  width: 400px;
+  text-align: center;
+  background-color: var(--white-color);
+}
+
+.contact-form-response svg:only-of-type {
+  margin-top: 3.2rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  fill: var(--first-color);
+}
+
 /* HeroImage */
 .hero-image {
   background-image: var(--hero-image);
@@ -433,6 +519,31 @@ progress::-moz-progress-bar {
   margin-bottom: 3.2rem;
 }
 
+.contact-cards :last-child h5 {
+  margin-bottom: 1.6rem;
+}
+
+.contact-card {
+  margin: 1.6rem auto;
+  padding: 1.6rem;
+  width: 100%;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-card > svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: var(--first-color);
+}
+
+.contact-card > small {
+  margin-top: -1.4rem;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -536,6 +647,16 @@ progress::-moz-progress-bar {
   fill: var(--first-color);
 }
 
+.social-media a {
+  padding: 0 .7rem;
+  text-decoration: none;
+}
+
+.social-media svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 /* tablet */
 @media screen and (min-width: 768px) {
   .about {
@@ -547,6 +668,12 @@ progress::-moz-progress-bar {
 
   .two-columns {
     grid-column: span 2;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
   }
 
  .portfolio > .container {
@@ -591,6 +718,10 @@ progress::-moz-progress-bar {
   
   .two-columns {
     grid-column: span 1;
+  }
+
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
   }
 
   .header {
