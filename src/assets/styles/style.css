@@ -95,6 +95,82 @@ small, b {
 }
 
 /* Components */
+/* Carousel */
+@keyframes carousel-slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-75%);
+  }
+}
+.carousel {
+  width: 100%;
+  min-width: 320px;
+  margin: 3.2rem auto;
+  padding: 3.2rem 0;
+  max-width: 800px;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: var(--carousel-bg-color);
+}
+
+.carousel .slides {
+  padding-left: 0;
+  /* 100% por cada slide */
+  width: 400%;
+  display: flex;
+  list-style: none;
+  transition: transform .5s ease-in-out;
+  animation: carousel-slide 12s ease-in-out 5s;
+}
+
+#slide-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3,
+#slide-4:checked ~ .slides-nav label#dot-4 {
+  background-color: var(--gray-dark-color);
+}
+
+.carousel input {
+  display: none;
+}
+
+.carousel label {
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  margin: 0 .4rem;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
 /* HeroImage */
 .hero-image {
   background-image: var(--hero-image);
@@ -117,6 +193,11 @@ small, b {
 .hero-image-title {
   font-size: 7.5vw;
   color: var(--hero-text-color);
+}
+
+.hero-image-content {
+  width: 100%;
+  min-width: 320px;
 }
 
 /* Menu */
@@ -258,6 +339,12 @@ progress::-moz-progress-bar {
 }
 
 /* Utilities */
+.avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
 .bg-gray-light {
   background-color: var(--gray-light-color);
 }
@@ -304,6 +391,10 @@ progress::-moz-progress-bar {
   padding: .8rem 1.6rem;
   text-align: center;
   color: var(--title-color);
+}
+
+.text-first-color {
+  color: var(--first-color);
 }
 
 .text-center {
