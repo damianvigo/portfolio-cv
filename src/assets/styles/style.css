@@ -447,6 +447,17 @@ progress::-moz-progress-bar {
 
 /* tablet */
 @media screen and (min-width: 768px) {
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .two-columns {
+    grid-column: span 2;
+  }
+
  .portfolio > .container {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -487,6 +498,10 @@ progress::-moz-progress-bar {
     align-content: center;
   }
   
+  .two-columns {
+    grid-column: span 1;
+  }
+
   .header {
     position: sticky;
     top: 0;
